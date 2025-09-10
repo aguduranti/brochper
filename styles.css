@@ -1,0 +1,209 @@
+/* TIPOGRAFÍA Y RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  transition: all 0.4s ease;
+  scroll-behavior: smooth;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background-color: #FF6600;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+.dark-toggle {
+  margin-left: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #FF6600 0%, #fff3e0 100%);
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 2px 2px rgba(0,0,0,0.2);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: #fff;
+  max-width: 700px;
+  margin: 0 auto;
+  text-shadow: 1px 1px rgba(0,0,0,0.2);
+}
+
+/* SOBRE NOSOTROS */
+.about {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #FF6600;
+}
+
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  background-color: #fff3e0;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+  color: #FF6600;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* CONTACTO */
+.contact {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #FF6600;
+}
+
+.contact a {
+  color: #FF6600;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #222;
+  color: #fff;
+}
+
+/* DARK MODE */
+body.dark {
+  background-color: #121212;
+  color: #fff;
+}
+
+body.dark .header {
+  background-color: #000;
+}
+
+body.dark .nav-links a {
+  color: #fff;
+}
+
+body.dark .hero {
+  background: linear-gradient(135deg, #FF6600 0%, #1a1a1a 100%);
+}
+
+body.dark .about-cards .card {
+  background-color: #1a1a1a;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(255,255,255,0.05);
+}
+
+body.dark .contact a {
+  color: #FF6600;
+}
+
+body.dark footer {
+  background-color: #000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
