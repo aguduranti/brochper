@@ -1,5 +1,7 @@
 const toggle = document.getElementById('darkModeToggle');
 const body = document.body;
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
 
 // Cargar el modo oscuro desde localStorage
 if(localStorage.getItem('darkMode') === 'enabled'){
@@ -9,7 +11,7 @@ if(localStorage.getItem('darkMode') === 'enabled'){
   toggle.textContent = '🌙';
 }
 
-// Cambiar modo oscuro y actualizar ícono
+// Cambiar modo oscuro
 toggle.addEventListener('click', () => {
   body.classList.toggle('dark');
   if(body.classList.contains('dark')){
@@ -19,4 +21,9 @@ toggle.addEventListener('click', () => {
     localStorage.setItem('darkMode', 'disabled');
     toggle.textContent = '🌙';
   }
+});
+
+// Menú hamburguesa
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
 });
