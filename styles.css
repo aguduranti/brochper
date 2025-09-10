@@ -1,4 +1,4 @@
-/* TIPOGRAFÍA Y RESET */
+/* RESET Y TIPOGRAFÍA */
 * {
   margin: 0;
   padding: 0;
@@ -54,8 +54,12 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.3rem;
-  color: #fff;
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.dark-toggle:hover {
+  transform: scale(1.2);
 }
 
 /* HERO */
@@ -205,5 +209,9 @@ body.dark footer {
 
   .hero p {
     font-size: 1.1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
   }
 }
