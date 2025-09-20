@@ -1,78 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brochper - Modernas y Minimalistas</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brochper Oficial</title>
+  
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="./images/Logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header class="header">
-    <div class="logo">🧦 Brochper</div>
-
-    <!-- Botón menú hamburguesa -->
-    <div class="hamburger" id="hamburger">
-      ☰
+    <div class="logo">
+      <img src="./images/Logotipo.png" alt="Logotipo">
     </div>
-
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">☰</button>
     <nav class="nav" id="navMenu">
       <ul class="nav-links">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#about">Sobre Nosotros</a></li>
-        <li><a href="#gallery">Galería</a></li>
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#history">Historia</a></li>
+        <li><a href="#gallery">Colección</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
-      <button id="darkModeToggle" class="dark-toggle">🌙</button>
+      <button id="darkModeToggle" class="dark-toggle" aria-label="Cambiar modo oscuro">🌙</button>
     </nav>
   </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Bienvenido a Brochper</h1>
-        <p>Medias modernas, cómodas y con estilo minimalista que marcan la diferencia.</p>
+    <section class="hero section" id="hero">
+      <div class="section-content">
+        <div class="section-image">
+          <img src="./images/Medias.png" alt="Medias modernas" />
+        </div>
+        <div class="section-text">
+          <samp><h1 id="Bienvenido" class="Bienvenido">Bienvenido a Brochper</h1></samp>
+          <p>Medias modernas, cómodas que marcan la diferencia.</p>
+        </div>
       </div>
     </section>
 
-    <!-- SOBRE NOSOTROS -->
-    <section class="about" id="about">
-      <h2>Sobre Brochper</h2>
-      <div class="about-cards">
-        <div class="card">
-          <img src="https://source.unsplash.com/300x200/?innovation" alt="Innovación">
-          <h3>Innovación</h3>
-          <p>Desde 2020, Brochper se dedica a diseñar medias únicas combinando estilo y comodidad.</p>
+    <!-- HISTORIA -->
+    <section class="history section" id="history">
+      <div class="section-content">
+        <div class="section-image">
+          <img src="./images/Ejemplos.png" alt="Historia Brochper" />
         </div>
-        <div class="card">
-          <img src="https://source.unsplash.com/300x200/?quality" alt="Calidad">
-          <h3>Calidad</h3>
-          <p>Utilizamos materiales de primera para garantizar durabilidad y confort en cada par.</p>
-        </div>
-        <div class="card">
-          <img src="https://source.unsplash.com/300x200/?sustainability" alt="Sostenibilidad">
-          <h3>Sostenibilidad</h3>
-          <p>Nos preocupamos por el medio ambiente utilizando procesos responsables y materiales eco-friendly.</p>
+        <div class="section-text">
+          <h2>Nuestra Historia</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>El problema</h3>
+              <p>El Sistema Brochper fue creado para dar una solución definitiva al mito y problema de las medias perdidas.</p>
+            </div>
+            <div class="timeline-item">
+              <h3>La solución</h3>
+              <p>Instalamos un broche macho/hembra permanente en fábrica, evitando que los pares se separen.</p>
+            </div>
+            <div class="timeline-item">
+              <h3>Objetivo principal</h3>
+              <p>Armonía doméstica y reducción del gasto innecesario en reposición de medias.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- GALERÍA -->
-    <section class="gallery" id="gallery">
-      <h2>Nuestra Colección</h2>
-      <div class="gallery-grid">
-        <img src="./images/media.jpg" alt="Medias modernas">
-        <img src="./images/media.jpg" alt="Estilo minimalista">
-        <img src="./images/media.jpg" alt="Moda y confort">
-        <img src="./images/media.jpg" alt="Diseño único">
+    <section class="gallery section" id="gallery">
+      <div class="section-content">
+        <div class="section-text">
+          <h2>Amplia Variedad de Modelos</h2>
+        </div>
+        <div class="section-image">
+          <div class="gallery-grid">
+            <img src="./images/Modelo1.png" alt="Medias modernas" loading="lazy"/>
+            <img src="./images/Modelo2.png" alt="Estilo minimalista" loading="lazy"/>
+            <img src="./images/Modelo3.png" alt="Moda y confort" loading="lazy"/>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- CONTACTO -->
-    <section class="contact" id="contact">
-      <h2>Contacto</h2>
-      <p>Para más información, escribinos a <a href="mailto:info@brochper.com">info@brochper.com</a></p>
+    <section class="contact section" id="contact">
+      <div class="section-content">
+        <div class="section-text">
+          <h2>Contacto</h2>
+          <div class="contact-info">
+            <p><i class="fab fa-instagram"></i> <a href="https://instagram.com/brochper.oficial" target="_blank">@brochper.oficial</a></p>
+            <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/543471579118" target="_blank">+54 3471 579118</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:brochper@gmail.com">brochper@gmail.com</a></p>
+            <p><i class="fas fa-qrcode"></i> <img src="./images/qr.png" alt="QR Brochper" class="qr-code"></p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -83,4 +106,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
