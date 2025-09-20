@@ -3,7 +3,6 @@
   const body = document.body;
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
-  const logo = document.getElementById('logo'); // Logo
 
 
   // Cargar modo oscuro
