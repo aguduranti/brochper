@@ -3,14 +3,27 @@
   const body = document.body;
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
+  const logo = document.getElementById('logo'); // Logo
+const logoImg = document.querySelector('#logo img'); // seleccionamos el <img> dentro del div logo
+
+  // Función para actualizar logo según modo
+  const actualizarLogo = () => {
+    if(body.classList.contains('dark')) {
+      logoImg.src = './images/logoTipoBlanco.png'; // ruta del logo oscuro
+    } else {
+      logoImg.src = './images/logoTipoazul.png'; // ruta del logo claro
+    }
+  }
 
   // Cargar modo oscuro
   if(localStorage.getItem('darkMode') === 'enabled' || 
      (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     body.classList.add('dark');
     toggle.textContent = '☀️';
+    actualizarLogo()
   } else {
     toggle.textContent = '🌙';
+    actualizarLogo()
   }
 
   // Cambiar modo oscuro
@@ -18,6 +31,7 @@
     const isDark = body.classList.toggle('dark');
     localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
     toggle.textContent = isDark ? '☀️' : '🌙';
+    actualizarLogo()
   });
 
   // Menú hamburguesa
