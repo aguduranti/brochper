@@ -1,63 +1,60 @@
 (() => {
-  const toggle = document.getElementById('darkModeToggle');
+  const $ = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+
   const body = document.body;
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('navMenu');
+  const toggle = $('#darkModeToggle');
+  const hamburger = $('#hamburger');
+  const navMenu = $('#navMenu');
 
+  // Modo oscuro (respeta preferencia del SO la 1ª vez)
+  const stored = localStorage.getItem('darkMode');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialDark = stored ? stored === 'enabled' : prefersDark;
+  if (initialDark) body.classList.add('dark');
+  toggle.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
 
-  // Cargar modo oscuro
-  if(localStorage.getItem('darkMode') === 'enabled' || 
-     (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    body.classList.add('dark');
-    toggle.textContent = '☀️';
-    
-  } else {
-    toggle.textContent = '🌙';
-    
-  }
-
-  // Cambiar modo oscuro
-  toggle.addEventListener('click', () => {
+  toggle?.addEventListener('click', () => {
     const isDark = body.classList.toggle('dark');
     localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
     toggle.textContent = isDark ? '☀️' : '🌙';
-    
   });
 
   // Menú hamburguesa
-  hamburger.addEventListener('click', () => {
+  hamburger?.addEventListener('click', () => {
     const expanded = navMenu.classList.toggle('active');
     hamburger.setAttribute('aria-expanded', expanded);
+    if (expanded) navMenu.querySelector('a')?.focus();
   });
 
-  // Animar timeline
-  const items = document.querySelectorAll('.timeline-item');
-  const observer = new IntersectionObserver((entries, obs) => {
+  // Header sombra al scrollear
+  const header = $('.header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 4);
+  onScroll();
+  document.addEventListener('scroll', onScroll, { passive: true });
+
+  // Scroll suave con offset del header
+  $$('.nav-links a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = $(a.getAttribute('href'));
+      if (!target) return;
+      const offset = header.getBoundingClientRect().height + 6;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+      navMenu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Observer para timeline
+  const io = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting){
+      if (entry.isIntersecting) {
         entry.target.classList.add('show');
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.2 });
-
-  document.querySelectorAll('.nav-links a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    const offset = 70; // altura del header sticky
-    const bodyRect = document.body.getBoundingClientRect().top;
-    const elementRect = target.getBoundingClientRect().top;
-    const elementPosition = elementRect - bodyRect;
-    const offsetPosition = elementPosition - offset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  });
-});
-
-
-  items.forEach(item => observer.observe(item));
+  }, { threshold: 0.15 });
+  $$('.timeline-item').forEach(el => io.observe(el));
 })();

@@ -2,116 +2,125 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Brochper Oficial</title>
+
+  <!-- SEO / Social -->
+  <meta name="description" content="Brochper: medias que no se pierden. Broche permanente macho/hembra, variedad de modelos y línea básica.">
+  <meta property="og:title" content="Brochper Oficial">
+  <meta property="og:description" content="Te las sacás, las abrochás y listo — medias que no se pierden.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./images/LOGO_2.png">
+  <meta name="theme-color" content="#f15a24">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="./images/Logo.png">
+  <link rel="preload" as="image" href="./images/Medias.png" fetchpriority="high">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header class="header">
+  <header class="header" id="top">
     <div class="logo">
-      <img src="./images/LOGO_2.png" alt="Logotipo">
+      <a href="#hero" class="logo-link" aria-label="Ir al inicio">
+        <img src="./images/LOGO_2.png" alt="Logotipo Brochper" width="355" height="92" decoding="async" />
+      </a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" id="navMenu">
+
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">☰</button>
+
+    <nav class="nav" id="navMenu" aria-label="Navegación principal">
       <ul class="nav-links">
         <li><a href="#hero">INICIO</a></li>
         <li><a href="#history">HISTORIA</a></li>
         <li><a href="#gallery">COLECCIÓN</a></li>
         <li><a href="#contact">CONTACTO</a></li>
       </ul>
-      <button id="darkModeToggle" class="dark-toggle" aria-label="Cambiar modo oscuro">🌙</button>
+      <button id="darkModeToggle" class="dark-toggle" aria-label="Cambiar modo oscuro" title="Cambiar modo oscuro">🌙</button>
     </nav>
   </header>
 
-  <main>
+  <main id="content">
     <!-- HERO -->
-    <section class="hero section" id="hero">
-      <div class="section-content">
-        <div class="section-image">
-          <img src="./images/Medias.png" alt="Medias modernas" />
+    <section class="hero section" id="hero" aria-labelledby="hero-title">
+      <div class="section-content container">
+        <div class="section-image hero-media">
+          <img src="./images/Medias.png" alt="Medias con sistema Brochper" loading="eager" decoding="async" />
         </div>
-        <div class="section-text" style="color: black;">
-          <h1 class="Bienvenido" style="color: black;">Te las sacas, las abrochás y listo — MEDIAS QUE NO SE PIERDEN.</h1>
-          <p style="color: black;" ><em>El broche que cambió la historia de las medias.</em></p>
+        <div class="section-text hero-copy">
+          <h1 id="hero-title">Te las sacás, las abrochás y listo — <span class="nowrap">MEDIAS QUE NO SE PIERDEN.</span></h1>
+          <p><em>El broche que cambió la historia de las medias.</em></p>
+          <a class="cta" href="#gallery">Ver modelos</a>
         </div>
       </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
     </section>
 
     <!-- HISTORIA -->
-    <section class="history section" id="history">
-      <div class="section-content">
+    <section class="history section" id="history" aria-labelledby="historia-title">
+      <div class="section-content container">
         <div class="section-image">
-          <img src="./images/Ejemplos.png" alt="Historia Brochper" />
+          <img src="./images/Ejemplos.png" alt="Ejemplos del sistema Brochper" loading="lazy" decoding="async" />
         </div>
         <div class="section-text">
-          <h2>HISTORIA</h2>
+          <h2 id="historia-title">HISTORIA</h2>
           <div class="timeline">
-            <div class="timeline-item">
+            <article class="timeline-item">
               <h3>EL PROBLEMA</h3>
               <p>El Sistema Brochper fue creado para dar una solución definitiva al mito y problema de las medias perdidas.</p>
-            </div>
-            <div class="timeline-item">
+            </article>
+            <article class="timeline-item">
               <h3>LA SOLUCIÓN</h3>
               <p>Instalamos un broche macho/hembra permanente en fábrica, evitando que los pares se separen.</p>
-            </div>
-            <div class="timeline-item">
+            </article>
+            <article class="timeline-item">
               <h3>OBJETIVO PRINCIPAL</h3>
               <p>Armonía doméstica y reducción del gasto innecesario en reposición de medias.</p>
-            </div>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
     <!-- GALERÍA -->
-    <section class="gallery section" id="gallery">
-      <div class="section-content">
+    <section class="gallery section" id="gallery" aria-labelledby="galeria-title">
+      <div class="section-content container">
         <div class="section-text">
-          <h2>AMPLIA VARIEDAD DE MODELOS</h2>
+          <h2 id="galeria-title">AMPLIA VARIEDAD DE MODELOS</h2>
         </div>
-        <div class="section-image">
-          <div class="gallery-grid">
-          <!-- Fila de imágenes -->
-          <div class="gallery-row">
-            <img src="./images/Modelo1.png" alt="Medias modernas" loading="lazy"/>
-            <img src="./images/Modelo2.png" alt="Estilo minimalista" loading="lazy"/>
-            <img src="./images/Modelo3.png" alt="Moda y confort" loading="lazy"/>
-          </div>
 
-          <!-- Fila de videos -->
-          <div class="gallery-row videos-row">
-            <video src="./images/video1.mp4" autoplay loop muted playsinline></video>
-            <video src="./images/video2.mp4" autoplay loop muted playsinline></video>
-          </div>
+        <div class="gallery-grid">
+          <img src="./images/Modelo1.png" alt="Modelo 1" loading="lazy" decoding="async">
+          <img src="./images/Modelo2.png" alt="Modelo 2" loading="lazy" decoding="async">
+          <img src="./images/Modelo3.png" alt="Modelo 3" loading="lazy" decoding="async">
+          <video src="./images/video1.mp4" autoplay loop muted playsinline aria-label="Vista de modelo en uso"></video>
+          <video src="./images/video2.mp4" autoplay loop muted playsinline aria-label="Vista de modelo en uso"></video>
         </div>
-        <br><br><br><br>
+
         <div class="ml-button">
-          <a href="https://listado.mercadolibre.com.ar/brochpersas#D[A:BROCHPERSAS]" target="_blank" class="ml-link">Ver en Mercado Libre</a>
+          <a href="https://listado.mercadolibre.com.ar/brochpersas#D[A:BROCHPERSAS]" target="_blank" rel="noopener" class="ml-link">Ver en Mercado Libre</a>
         </div>
       </div>
     </section>
 
     <!-- MODELOS BÁSICOS -->
-    <section class="basic-models section">
-      <div class="section-content">
+    <section class="basic-models section" aria-labelledby="basicos-title">
+      <div class="section-content container">
         <div class="section-text">
-          <h2>MODELOS BÁSICOS</h2>
+          <h2 id="basicos-title">MODELOS BÁSICOS</h2>
           <p>También contamos con una línea clásica en colores <strong>negro</strong>, <strong>blanco</strong> y <strong>gris</strong>, ideales para todos los días.</p>
         </div>
       </div>
     </section>
 
     <!-- CONTACTO -->
-    <section class="contact section" id="contact">
-      <div class="section-content">
+    <section class="contact section" id="contact" aria-labelledby="contacto-title">
+      <div class="section-content container">
         <div class="section-text">
-          <h2>CONTACTO</h2>
+          <h2 id="contacto-title">CONTACTO</h2>
           <div class="contact-info">
-            <p><strong><i class="fab fa-instagram"></i> <a href="https://instagram.com/brochper.oficial" target="_blank">@brochper.oficial</a></strong></p>
-            <p><strong><i class="fab fa-whatsapp"></i> <a href="https://wa.me/543471591418" target="_blank">+54 3471 591418</a></strong></p>
+            <p><strong><i class="fab fa-instagram"></i> <a href="https://instagram.com/brochper.oficial" target="_blank" rel="noopener">@brochper.oficial</a></strong></p>
+            <p><strong><i class="fab fa-whatsapp"></i> <a href="https://wa.me/543471591418" target="_blank" rel="noopener">+54 3471 591418</a></strong></p>
             <p><strong><i class="fas fa-envelope"></i> <a href="mailto:brochper@gmail.com">brochper@gmail.com</a></strong></p>
           </div>
         </div>
@@ -119,10 +128,11 @@
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Brochper - Todos los derechos reservados</p>
+  <footer role="contentinfo">
+    <p>© 2025 Brochper — Todos los derechos reservados</p>
+    <a class="back-to-top" href="#top" aria-label="Volver arriba">↑</a>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
