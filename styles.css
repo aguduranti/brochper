@@ -1,10 +1,11 @@
 :root {
-  --color-principal: #FF7A33;
+  --color-principal: #f15a24;
   --color-fondo: #fff3e0;
   --color-texto: #000;
   --color-dark-bg: #121212;
   --color-dark-text: #fff;
 }
+
 
 /* RESET */
 * {
@@ -21,7 +22,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* HEADER */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -127,6 +128,7 @@ html {
 
 .section-text {
   flex: 1 1 300px;
+  
 }
 
 #Bienvenido {
@@ -382,5 +384,40 @@ body.dark footer {
 
   .qr-code {
     width: 80px;
+  }
+}
+
+
+.gallery-grid video {
+  flex: 1 1 calc(25% - 1rem);
+  max-width: 250px;
+  border-radius: 15px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery-grid video:hover {
+  transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .gallery-grid video {
+    flex: 1 1 calc(33.333% - 1rem);
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid video {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid video {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
