@@ -153,3 +153,15 @@ body.dark .timeline-item h3{color:var(--color-principal)}
 body.dark .header{background:#000}
 body.dark .nav-links a{color:#fff}
 body.dark footer{background:#000}
+
+
+/* === Shrink ONLY the first hero image on phones === */
+@media (max-width: 640px){
+  #hero .section-image img{
+    width: min(70vw, 360px);   /* narrower image */
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+    display: block;
+  }
+}
