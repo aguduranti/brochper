@@ -154,14 +154,13 @@ body.dark .header{background:#000}
 body.dark .nav-links a{color:#fff}
 body.dark footer{background:#000}
 
-
-/* === Shrink ONLY the first hero image on phones === */
-@media (max-width: 640px){
+/* === Fix: evitar recorte en la PRIMER imagen del hero === */
+@media (max-width: 768px){
   #hero .section-image img{
-    width: min(70vw, 360px);   /* narrower image */
-    max-width: 100%;
-    height: auto;
-    margin-inline: auto;
-    display: block;
+    aspect-ratio: auto !important; /* desactiva el 4/3 que fuerza recorte */
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important; /* muestra la imagen completa */
   }
 }
+
